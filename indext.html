@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLS INFO | Digital Marketing Courses</title>
+  <meta name="description" content="Learn digital marketing with practical, job-ready courses from BLS INFO." />
+  <style>
+    :root {
+      --bg: #f6f8f5;
+      --surface: #ffffff;
+      --text: #17231f;
+      --muted: #4f625b;
+      --brand: #0b6f4f;
+      --brand-2: #f2a900;
+      --border: #dce5df;
+      --shadow: 0 12px 30px rgba(8, 32, 24, 0.08);
+      --radius: 16px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 10%, #e6f7ee 0, transparent 28%),
+                  radial-gradient(circle at 80% 20%, #fff2d6 0, transparent 32%),
+                  var(--bg);
+      line-height: 1.55;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 248, 245, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.4px;
+      color: var(--brand);
+    }
+
+    .logo span { color: var(--brand-2); }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 18px rgba(11, 111, 79, 0.28);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 68px 0 52px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .chip {
+      display: inline-block;
+      background: #def7e8;
+      color: var(--brand);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.83rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 2.8vw, 3.1rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 0 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ghost-btn {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .hero-card .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .hero-card .meta strong {
+      font-size: 1.15rem;
+      color: var(--brand);
+      display: block;
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .toolbar input,
+    .toolbar select {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      background: #fff;
+      min-width: 180px;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .course-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+
+    .tag {
+      align-self: flex-start;
+      background: #edf4ef;
+      border: 1px solid #dae4dc;
+      color: #2f4a3f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 5px 10px;
+    }
+
+    .course-title {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.35;
+    }
+
+    .course-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+      min-height: 44px;
+    }
+
+    .course-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .small-btn {
+      padding: 9px 13px;
+      font-size: 0.85rem;
+    }
+
+    .about {
+      background: #11372a;
+      color: #ebfff4;
+      border-radius: 24px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .about p { color: #cbe9d9; }
+
+    .about img {
+      border-radius: 16px;
+      max-height: 280px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .contact-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      background: linear-gradient(140deg, #0f5139, #0b6f4f);
+      color: #ecfff5;
+      border-radius: 18px;
+      padding: 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #d7f8e6;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .enroll-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 37, 31, 0.58);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 40;
+    }
+
+    .enroll-modal.show {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(100%, 520px);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: linear-gradient(140deg, #eaf8f1, #fff8e6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-head h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .close-btn {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .enroll-form {
+      padding: 16px 18px 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .enroll-form label {
+      display: grid;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .enroll-form input {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+    }
+
+    .course-chip {
+      background: #edf6f1;
+      color: #1e4f3d;
+      border: 1px solid #d8e8df;
+      border-radius: 999px;
+      width: fit-content;
+      padding: 6px 10px;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .form-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .success-note {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--brand);
+      font-weight: 700;
+      display: none;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .checklist li::before {
+      content: "\2713";
+      color: var(--brand-2);
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      .hero-wrap,
+      .about,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .menu-btn { display: inline-flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 4%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.show { display: flex; }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card .meta {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">BLS<span>IN</span>FO</div>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="btn" id="enrollNowBtn">Enroll Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <span class="chip">100% Practical Learning</span>
+          <h1>Master Digital Marketing and Grow Any Brand Online</h1>
+          <p>
+            Learn SEO, social media, paid ads, analytics, and AI-powered growth with
+            industry-ready courses. Build real campaigns and portfolio projects.
+          </p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn">Browse Courses</a>
+            <a href="#about" class="btn ghost-btn">Why Choose Us</a>
+          </div>
+        </div>
+        <article class="hero-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Digital marketing dashboard on screen" loading="lazy" />
+          <div class="meta">
+            <div><strong>12</strong>Courses</div>
+            <div><strong>5k+</strong>Students</div>
+            <div><strong>4.8/5</strong>Rating</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Digital Marketing Courses</h2>
+            <p>Choose from beginner to advanced programs.</p>
+          </div>
+          <div class="toolbar">
+            <input type="search" id="searchInput" placeholder="Search course..." aria-label="Search course" />
+            <select id="categoryFilter" aria-label="Filter by category">
+              <option value="all">All Categories</option>
+              <option value="SEO">SEO</option>
+              <option value="Social Media">Social Media</option>
+              <option value="Paid Ads">Paid Ads</option>
+              <option value="Analytics">Analytics</option>
+              <option value="Content">Content</option>
+              <option value="Email">Email</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="courses-grid" id="coursesGrid">
+          <article class="course-card" data-title="SEO Foundations" data-category="SEO">
+            <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1200&q=80" alt="Search engine concept" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">SEO</span>
+              <h3 class="course-title">SEO Foundations</h3>
+              <p class="course-desc">Keyword research, on-page optimization, and technical SEO basics.</p>
+              <div class="course-footer"><span class="price">$49</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Advanced SEO Strategy" data-category="SEO">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=1200&q=80" alt="Graph showing growth" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">SEO</span>
+              <h3 class="course-title">Advanced SEO Strategy</h3>
+              <p class="course-desc">Build authority with backlinks, content clusters, and audits.</p>
+              <div class="course-footer"><span class="price">$79</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Social Media Marketing Pro" data-category="Social Media">
+            <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=1200&q=80" alt="Social media app icons" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Social Media</span>
+              <h3 class="course-title">Social Media Marketing Pro</h3>
+              <p class="course-desc">Plan content calendars and grow engagement across platforms.</p>
+              <div class="course-footer"><span class="price">$59</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Instagram & Reels Growth" data-category="Social Media">
+            <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=1200&q=80" alt="Phone with social feed" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Social Media</span>
+              <h3 class="course-title">Instagram & Reels Growth</h3>
+              <p class="course-desc">Create short-form content funnels that convert views to sales.</p>
+              <div class="course-footer"><span class="price">$45</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Google Ads Bootcamp" data-category="Paid Ads">
+            <img src="https://images.unsplash.com/photo-1551817958-20204ea83c47?auto=format&fit=crop&w=1200&q=80" alt="Online advertising analytics" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Paid Ads</span>
+              <h3 class="course-title">Google Ads Bootcamp</h3>
+              <p class="course-desc">Launch and optimize search and display ads for ROI.</p>
+              <div class="course-footer"><span class="price">$89</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Meta Ads Masterclass" data-category="Paid Ads">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Paid campaign dashboard" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Paid Ads</span>
+              <h3 class="course-title">Meta Ads Masterclass</h3>
+              <p class="course-desc">Build high-converting Facebook and Instagram ad funnels.</p>
+              <div class="course-footer"><span class="price">$84</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Content Marketing Blueprint" data-category="Content">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" alt="Person writing content" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Content</span>
+              <h3 class="course-title">Content Marketing Blueprint</h3>
+              <p class="course-desc">Create blog, video, and lead-magnet content that sells.</p>
+              <div class="course-footer"><span class="price">$55</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Copywriting for Conversions" data-category="Content">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" alt="Marketing copywriting desk" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Content</span>
+              <h3 class="course-title">Copywriting for Conversions</h3>
+              <p class="course-desc">Write ad copy, landing pages, and email sequences that convert.</p>
+              <div class="course-footer"><span class="price">$52</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Email Marketing Automation" data-category="Email">
+            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=1200&q=80" alt="Email marketing concept" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Email</span>
+              <h3 class="course-title">Email Marketing Automation</h3>
+              <p class="course-desc">Build lifecycle campaigns, newsletters, and drip sequences.</p>
+              <div class="course-footer"><span class="price">$64</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="GA4 & Marketing Analytics" data-category="Analytics">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Analytics charts and reports" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Analytics</span>
+              <h3 class="course-title">GA4 & Marketing Analytics</h3>
+              <p class="course-desc">Track user behavior, events, and campaign performance with GA4.</p>
+              <div class="course-footer"><span class="price">$72</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="YouTube Marketing Accelerator" data-category="Social Media">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80" alt="YouTube creator setup" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Social Media</span>
+              <h3 class="course-title">YouTube Marketing Accelerator</h3>
+              <p class="course-desc">Grow a channel with SEO titles, thumbnails, and publishing systems.</p>
+              <div class="course-footer"><span class="price">$68</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+
+          <article class="course-card" data-title="Affiliate Marketing Launchpad" data-category="Paid Ads">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80" alt="Laptop with affiliate sales data" loading="lazy" />
+            <div class="course-content">
+              <span class="tag">Paid Ads</span>
+              <h3 class="course-title">Affiliate Marketing Launchpad</h3>
+              <p class="course-desc">Start profitable affiliate funnels using ads, SEO, and email.</p>
+              <div class="course-footer"><span class="price">$61</span><button class="btn small-btn">Buy Course</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about">
+          <div>
+            <h2>About BLS INFO</h2>
+            <p>
+              We help students, freelancers, and business owners learn digital marketing
+              with practical projects, mentorship, and current strategies.
+            </p>
+            <ul class="checklist">
+              <li>Beginner to advanced learning paths</li>
+              <li>Real campaign-based assignments</li>
+              <li>Lifetime access to course updates</li>
+              <li>Certificate after course completion</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Digital marketing team discussion" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contact Us</h2>
+            <p>Need help choosing a course? Reach out and our team will guide you.</p>
+          </div>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-copy">
+            <h3>Talk to BLS INFO</h3>
+            <p>
+              Get details about course modules, pricing, and enrollment support.
+              We usually respond within one business day.
+            </p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:bls_info@hotmail.com">bls_info@hotmail.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Contact No.</strong>
+              <a href="tel:+919717386223">+91 97173-86223</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="enroll-modal" id="enrollModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+      <div class="modal-head">
+        <h3 id="enrollTitle">Enroll in a Course</h3>
+        <button class="close-btn" id="closeEnrollModal" aria-label="Close enrollment form">x</button>
+      </div>
+      <form class="enroll-form" id="enrollForm">
+        <div class="course-chip" id="selectedCourse">Course: General Enrollment</div>
+        <label>
+          Full Name
+          <input type="text" id="studentName" required placeholder="Enter your name" />
+        </label>
+        <label>
+          Email Address
+          <input type="email" id="studentEmail" required placeholder="Enter your email" />
+        </label>
+        <label>
+          Phone Number
+          <input type="tel" id="studentPhone" required placeholder="Enter your phone number" />
+        </label>
+        <button type="submit" class="btn">Submit Enrollment</button>
+        <p class="form-note">Our team will contact you soon with next steps.</p>
+        <p class="success-note" id="successNote">Enrollment submitted successfully.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Contact: bls_info@hotmail.com | +91 97173-86223</p>
+      <p>&copy; 2026 BLS INFO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const cards = document.querySelectorAll(".course-card");
+    const enrollNowBtn = document.getElementById("enrollNowBtn");
+    const buyButtons = document.querySelectorAll(".course-card .small-btn");
+    const enrollModal = document.getElementById("enrollModal");
+    const closeEnrollModal = document.getElementById("closeEnrollModal");
+    const selectedCourse = document.getElementById("selectedCourse");
+    const enrollForm = document.getElementById("enrollForm");
+    const successNote = document.getElementById("successNote");
+    let activeCourse = "General Enrollment";
+
+    function filterCourses() {
+      const term = searchInput.value.trim().toLowerCase();
+      const selected = categoryFilter.value;
+
+      cards.forEach((card) => {
+        const title = card.dataset.title.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchesTerm = title.includes(term);
+        const matchesCategory = selected === "all" || category === selected;
+
+        card.classList.toggle("hidden", !(matchesTerm && matchesCategory));
+      });
+    }
+
+    searchInput.addEventListener("input", filterCourses);
+    categoryFilter.addEventListener("change", filterCourses);
+
+    function openEnrollModal(courseName) {
+      activeCourse = courseName || "General Enrollment";
+      selectedCourse.textContent = `Course: ${activeCourse}`;
+      enrollModal.classList.add("show");
+      enrollModal.setAttribute("aria-hidden", "false");
+      successNote.style.display = "none";
+    }
+
+    function closeModal() {
+      enrollModal.classList.remove("show");
+      enrollModal.setAttribute("aria-hidden", "true");
+    }
+
+    enrollNowBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      openEnrollModal("General Enrollment");
+    });
+
+    buyButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".course-card");
+        openEnrollModal(card ? card.dataset.title : "General Enrollment");
+      });
+    });
+
+    closeEnrollModal.addEventListener("click", closeModal);
+
+    enrollModal.addEventListener("click", (event) => {
+      if (event.target === enrollModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && enrollModal.classList.contains("show")) {
+        closeModal();
+      }
+    });
+
+    enrollForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      successNote.textContent = `Enrollment submitted for ${activeCourse}.`;
+      successNote.style.display = "block";
+      enrollForm.reset();
+
+      setTimeout(() => {
+        closeModal();
+      }, 1300);
+    });
+  </script>
+</body>
+</html>
